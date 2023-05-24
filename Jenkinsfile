@@ -45,7 +45,8 @@ pipeline {
             steps {
                 sh "echo 'Creo el contenedor'"
                 dir('contenedor') {
-                    withCredentials([usernamePassword(credentialsId: 'gitprueba', passwordVariable: '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', usernameVariable: 'srodenas')]) {
+                    withCredentials([usernamePassword(credentialsId: 'gitpruebasanti', passwordVariable: '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', usernameVariable: 'srodenas')]) {
+
                         git 'https://github.com/srodenas/pruebaDespliegue.git'
                         sh('''
                             cp ../codigo/webapp/target/webapp.war .
